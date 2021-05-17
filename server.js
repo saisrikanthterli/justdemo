@@ -10,6 +10,7 @@ app.get('/',(req,res)=>{
     res.render('idex')
 })
 
+
 app.post('/',(req,res)=>{
     console.log(req.body)
     res.send(req.body)
