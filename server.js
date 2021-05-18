@@ -20,8 +20,21 @@ app.get('/searchpage',(req,res)=>{
     res.render('searchpage')
 })
 
-app.post('/searchpage',(req,res)=>{
 
-})
+app.post('/searchpage',(req,res)=>{
+    
+        const users=[{user1: 'john'},{ user1: 'nike'}]
+        const data=users.find((user)=>{
+    
+            if(user.user1===req.body.query)
+                {
+                    
+                    return('Authorized User....')
+                }
+
+            })
+            res.send(data.user1)
+            //  res.send('UnAutherized User....')
+        })
 
 app.listen(port)
