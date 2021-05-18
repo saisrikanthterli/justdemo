@@ -11,11 +11,17 @@ app.get('/',(req,res)=>{
 })
 
 
+
 app.post('/',(req,res)=>{
     console.log(req.body)
-    res.send(req.body)
+    res.redirect('/searchpage')
+})
+app.get('/searchpage',(req,res)=>{
+    res.render('searchpage')
 })
 
+app.post('/searchpage',(req,res)=>{
 
+})
 
 app.listen(port)
