@@ -29,12 +29,14 @@ app.post('/searchpage',(req,res)=>{
             if(user.user1===req.body.query)
                 {
                     
-                    return('Authorized User....')
+                   res.redirect('profile',{name:user.user1})
                 }
 
             })
             res.send(data.user1)
             //  res.send('UnAutherized User....')
         })
-
+app.get('/profile',(req,res)=>{
+    res.render('profile')
+})
 app.listen(port)
