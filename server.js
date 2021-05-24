@@ -16,6 +16,8 @@ app.get('/',(req,res)=>{
 app.post('/',(req,res)=>{
     console.log(req.body)
     users.push(req.body)
+    bcrypt.hash(req.body.password)
+
     res.redirect('/searchpage')
     console.log(users)
 
@@ -29,11 +31,14 @@ app.get('/searchpage',(req,res)=>{
 app.post('/searchpage',(req,res)=>{
     
        
-        console.log(req.body)
-            
+        console.log()
+            res.send(req.body.query)
         })
         
 app.get('/profile',(req,res)=>{
     res.render('profile')
 })
-app.listen(port)
+
+
+
+app.listen(port,()=>{console.log('listening on port')})
