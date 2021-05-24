@@ -16,28 +16,37 @@ app.get('/',(req,res)=>{
 app.post('/',(req,res)=>{
     console.log(req.body)
     users.push(req.body)
-    bcrypt.hash(req.body.password)
-
-    res.redirect('/searchpage')
     console.log(users)
+    res.redirect('/searchpage')
+ 
 
 })
 
 app.get('/searchpage',(req,res)=>{
+
     res.render('searchpage')
+
 })
+
 
 
 app.post('/searchpage',(req,res)=>{
     
        
         console.log()
-            res.send(req.body.query)
-        })
+
+        res.send(req.body.query)
+
+    })
         
+
+
 app.get('/profile',(req,res)=>{
+
     res.render('profile')
+
 })
+
 
 
 
